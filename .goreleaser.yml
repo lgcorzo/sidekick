@@ -6,7 +6,7 @@ release:
    name_template: "Release version {{.Version}}"
 
    github:
-    owner: minio
+    owner: lgcorzo
     name: sidekick
 
 before:
@@ -42,9 +42,9 @@ archives:
 
 nfpms:
   -
-    vendor: MinIO, Inc.
-    homepage: https://github.com/minio/sidekick
-    maintainer: MinIO Development <dev@min.io>
+    vendor: Sovereign Development
+    homepage: https://github.com/lgcorzo/sidekick
+    maintainer: Sovereign Development <dev@lgcorzo.com>
     description: SideKick is a high-performance sidecar load-balancer.
     license: GNU Affero General Public License v3.0
     formats:
@@ -65,7 +65,7 @@ changelog:
 
 dockers:
 - image_templates:
-  - "quay.io/minio/sidekick:{{ .Tag }}-amd64"
+  - "quay.io/lgcorzo/sidekick:{{ .Tag }}-amd64"
   use: buildx
   dockerfile: Dockerfile.release
   extra_files:
@@ -75,7 +75,7 @@ dockers:
   build_flag_templates:
   - "--platform=linux/amd64"
 - image_templates:
-  - "quay.io/minio/sidekick:{{ .Tag }}-ppc64le"
+  - "quay.io/lgcorzo/sidekick:{{ .Tag }}-ppc64le"
   use: buildx
   dockerfile: Dockerfile.release
   extra_files:
@@ -85,7 +85,7 @@ dockers:
   build_flag_templates:
   - "--platform=linux/ppc64le"
 - image_templates:
-  - "quay.io/minio/sidekick:{{ .Tag }}-s390x"
+  - "quay.io/lgcorzo/sidekick:{{ .Tag }}-s390x"
   use: buildx
   dockerfile: Dockerfile.release
   extra_files:
@@ -95,7 +95,7 @@ dockers:
   build_flag_templates:
   - "--platform=linux/s390x"
 - image_templates:
-  - "quay.io/minio/sidekick:{{ .Tag }}-arm64"
+  - "quay.io/lgcorzo/sidekick:{{ .Tag }}-arm64"
   use: buildx
   dockerfile: Dockerfile.release
   extra_files:
@@ -105,9 +105,9 @@ dockers:
   build_flag_templates:
   - "--platform=linux/arm64"
 docker_manifests:
-- name_template: quay.io/minio/sidekick:{{ .Tag }}
+- name_template: quay.io/lgcorzo/sidekick:{{ .Tag }}
   image_templates:
-  - quay.io/minio/sidekick:{{ .Tag }}-amd64
-  - quay.io/minio/sidekick:{{ .Tag }}-arm64
-  - quay.io/minio/sidekick:{{ .Tag }}-ppc64le
-  - quay.io/minio/sidekick:{{ .Tag }}-s390x
+  - quay.io/lgcorzo/sidekick:{{ .Tag }}-amd64
+  - quay.io/lgcorzo/sidekick:{{ .Tag }}-arm64
+  - quay.io/lgcorzo/sidekick:{{ .Tag }}-ppc64le
+  - quay.io/lgcorzo/sidekick:{{ .Tag }}-s390x

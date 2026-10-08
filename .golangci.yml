@@ -1,6 +1,5 @@
-version: "2"
 linters:
-  default: none
+  disable-all: true
   enable:
     - durationcheck
     - gocritic
@@ -12,32 +11,19 @@ linters:
     - staticcheck
     - unconvert
     - unused
-  settings:
-    misspell:
-      locale: US
-  exclusions:
-    generated: lax
-    rules:
-      - path: (.+)\.go$
-        text: should have a package comment
-      - path: (.+)\.go$
-        text: error strings should not be capitalized or end with punctuation or a newline
-      - path: (.+)\.go$
-        text: http.CloseNotifier has been deprecated since
-      - path: (.+)\.go$
-        text: has been deprecated since Go 1.6
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
-formatters:
-  enable:
-    - gofmt
-    - gofumpt
-    - goimports
-  exclusions:
-    generated: lax
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
+
+linters-settings:
+  misspell:
+    locale: US
+
+issues:
+  exclude-use-default: false
+  exclude-rules:
+    - path: (.+)\.go$
+      text: "should have a package comment"
+    - path: (.+)\.go$
+      text: "error strings should not be capitalized or end with punctuation or a newline"
+    - path: (.+)\.go$
+      text: "http.CloseNotifier has been deprecated since"
+    - path: (.+)\.go$
+      text: "has been deprecated since Go 1.6"

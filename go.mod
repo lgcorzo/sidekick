@@ -1,8 +1,6 @@
-module github.com/minio/sidekick
+module github.com/lgcorzo/sidekick
 
 go 1.24.0
-
-toolchain go1.24.5
 
 require (
 	github.com/dustin/go-humanize v1.0.1
@@ -18,6 +16,12 @@ require (
 	golang.org/x/net v0.42.0
 	golang.org/x/sys v0.34.0
 	golang.org/x/term v0.33.0
+)
+
+replace (
+	github.com/minio/cli => github.com/lgcorzo/cli v1.24.2
+	github.com/minio/dnscache => github.com/lgcorzo/dnscache v0.1.1
+	github.com/minio/pkg/v3 => github.com/lgcorzo/pkg/v3 v3.3.4
 )
 
 require (

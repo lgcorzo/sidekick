@@ -50,13 +50,13 @@ import (
 	"go.uber.org/automaxprocs/maxprocs"
 	"golang.org/x/term"
 
+	"github.com/lgcorzo/sidekick/reverse"
 	"github.com/minio/cli"
 	"github.com/minio/dnscache"
 	"github.com/minio/pkg/v3/certs"
 	"github.com/minio/pkg/v3/console"
 	"github.com/minio/pkg/v3/ellipses"
 	xnet "github.com/minio/pkg/v3/net"
-	"github.com/minio/sidekick/reverse"
 )
 
 // Use e.g.: go build -ldflags "-X main.version=v1.0.0"
@@ -794,14 +794,13 @@ func clientTransport(ctx *cli.Context, tlsMaxVersion uint16, enableTLS bool, hos
 	if enableTLS {
 		// Keep TLS config.
 		tr.TLSClientConfig = &tls.Config{
-			RootCAs:                  getCertPool(ctx.GlobalString("cacert")),
-			Certificates:             getCertKeyPair(ctx.GlobalString("client-cert"), ctx.GlobalString("client-key")),
-			InsecureSkipVerify:       ctx.GlobalBool("insecure"),
-			MinVersion:               tls.VersionTLS12,
-			MaxVersion:               tlsMaxVersion,
-			PreferServerCipherSuites: true,
-			ClientSessionCache:       tls.NewLRUClientSessionCache(tlsClientSessionCacheSize),
-			ServerName:               hostName,
+			RootCAs:            getCertPool(ctx.GlobalString("cacert")),
+			Certificates:       getCertKeyPair(ctx.GlobalString("client-cert"), ctx.GlobalString("client-key")),
+			InsecureSkipVerify: ctx.GlobalBool("insecure"),
+			MinVersion:         tls.VersionTLS12,
+			MaxVersion:         tlsMaxVersion,
+			ClientSessionCache: tls.NewLRUClientSessionCache(tlsClientSessionCacheSize),
+			ServerName:         hostName,
 		}
 	}
 
@@ -965,7 +964,7 @@ func configureSite(ctxt context.Context, ctx *cli.Context, siteNum int, siteStrs
 			target.Scheme = "http"
 		}
 		if target.Scheme != "http" && target.Scheme != "https" {
-			console.Fatalln("unexpected scheme %s, should be http or https, please use '%s --help'",
+			console.Fatalf("unexpected scheme %s, should be http or https, please use '%s --help'\n",
 				endpoint, ctx.App.Name)
 		}
 		if target.Host == "" {
@@ -1156,12 +1155,11 @@ func sidekickMain(ctx *cli.Context) {
 			console.Fatalln(err)
 		}
 		tlsConfig := &tls.Config{
-			PreferServerCipherSuites: true,
-			NextProtos:               []string{"http/1.1", "h2"},
-			GetCertificate:           manager.GetCertificate,
-			MinVersion:               tls.VersionTLS12,
-			MaxVersion:               tlsMaxVersion,
-			ClientSessionCache:       tls.NewLRUClientSessionCache(tlsClientSessionCacheSize),
+			NextProtos:         []string{"http/1.1", "h2"},
+			GetCertificate:     manager.GetCertificate,
+			MinVersion:         tls.VersionTLS12,
+			MaxVersion:         tlsMaxVersion,
+			ClientSessionCache: tls.NewLRUClientSessionCache(tlsClientSessionCacheSize),
 		}
 		server.TLSConfig = tlsConfig
 	} else if ctx.String("auto-tls-host") != "" {
@@ -1193,12 +1191,11 @@ func sidekickMain(ctx *cli.Context) {
 		globalTLSCert.Store(&cert)
 
 		tlsConfig := &tls.Config{
-			PreferServerCipherSuites: true,
-			NextProtos:               []string{"http/1.1", "h2"},
-			Certificates:             []tls.Certificate{certificates},
-			MinVersion:               tls.VersionTLS12,
-			MaxVersion:               tlsMaxVersion,
-			ClientSessionCache:       tls.NewLRUClientSessionCache(tlsClientSessionCacheSize),
+			NextProtos:         []string{"http/1.1", "h2"},
+			Certificates:       []tls.Certificate{certificates},
+			MinVersion:         tls.VersionTLS12,
+			MaxVersion:         tlsMaxVersion,
+			ClientSessionCache: tls.NewLRUClientSessionCache(tlsClientSessionCacheSize),
 		}
 		server.TLSConfig = tlsConfig
 	}
