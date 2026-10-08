@@ -30,6 +30,8 @@ jobs:
       - name: Run golangci-lint
         if: matrix.os == 'ubuntu-latest'
         uses: golangci/golangci-lint-action@v6
+        with:
+          verify: false
 
       - name: Test
         run: go test -v -race ./...
