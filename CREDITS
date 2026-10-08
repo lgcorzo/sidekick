@@ -998,8 +998,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ================================================================
 
-github.com/minio/cli
-https://github.com/minio/cli
+github.com/lgcorzo/cli
+https://github.com/lgcorzo/cli
 ----------------------------------------------------------------
 MIT License
 
@@ -1025,8 +1025,8 @@ SOFTWARE.
 
 ================================================================
 
-github.com/minio/dnscache
-https://github.com/minio/dnscache
+github.com/lgcorzo/dnscache
+https://github.com/lgcorzo/dnscache
 ----------------------------------------------------------------
 MIT License
 
@@ -1053,8 +1053,8 @@ SOFTWARE.
 
 ================================================================
 
-github.com/minio/mux
-https://github.com/minio/mux
+github.com/lgcorzo/mux
+https://github.com/lgcorzo/mux
 ----------------------------------------------------------------
 Copyright (c) 2012-2018 The Gorilla Authors. All rights reserved.
 
@@ -1086,8 +1086,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ================================================================
 
-github.com/minio/pkg/v3
-https://github.com/minio/pkg/v3
+github.com/lgcorzo/pkg/v3
+https://github.com/lgcorzo/pkg/v3
 ----------------------------------------------------------------
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007

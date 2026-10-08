@@ -5,7 +5,7 @@ Systemd script for Sidekick Load Balancer.
 ## Installation
 
 - Systemd script is configured to run the binary from /usr/local/bin/
-- Download the binary from https://github.com/minio/sidekick/releases
+- Download the binary from https://github.com/lgcorzo/sidekick/releases
 
 ## Create default configuration
 

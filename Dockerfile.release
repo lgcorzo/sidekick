@@ -2,7 +2,7 @@ FROM alpine:latest as certs
 RUN apk --update add ca-certificates
 
 FROM scratch
-MAINTAINER MinIO Development "dev@min.io"
+MAINTAINER Sovereign Development "dev@lgcorzo.com"
 EXPOSE 8080
 
 COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
