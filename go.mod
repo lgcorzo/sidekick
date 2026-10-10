@@ -1,6 +1,6 @@
 module github.com/lgcorzo/sidekick
 
-go 1.24.0
+go 1.25.0
 
 require (
 	github.com/dustin/go-humanize v1.0.1
@@ -13,9 +13,9 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	go.uber.org/atomic v1.11.0
 	go.uber.org/automaxprocs v1.6.0
-	golang.org/x/net v0.42.0
-	golang.org/x/sys v0.34.0
-	golang.org/x/term v0.33.0
+	golang.org/x/net v0.54.0
+	golang.org/x/sys v0.45.0
+	golang.org/x/term v0.43.0
 )
 
 replace (
@@ -43,8 +43,8 @@ require (
 	github.com/prometheus/procfs v0.17.0 // indirect
 	github.com/rjeczalik/notify v0.9.3 // indirect
 	github.com/segmentio/asm v1.2.0 // indirect
-	golang.org/x/crypto v0.40.0 // indirect
-	golang.org/x/sync v0.16.0 // indirect
-	golang.org/x/text v0.27.0 // indirect
+	golang.org/x/crypto v0.52.0 // indirect
+	golang.org/x/sync v0.20.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 	google.golang.org/protobuf v1.36.6 // indirect
 )
