@@ -18,17 +18,17 @@ Maintained fork of [minio/sidekick](https://github.com/minio/sidekick) (archived
 
 In the **Dark Gravity Autonomous CA/CD Software Factory**, *sidekick* serves as an essential client-side proxy providing high-performance, low-latency S3 load balancing, automatic failover, and request-level health verification across distributed MinIO storage nodes.
 
-Upstream MinIO's shift toward proprietary AIStor and unannounced deprecations of community utilities creates supply-chain risks. In a zero-trust, autonomous multi-agent engineering factory:
+Upstream MinIO's shift toward proprietary AIStor and unannounced deprecations of community utilities creates supply-chain risks. In an autonomous multi-agent engineering factory using mTLS authentication, per-identity access policies, and audit logs:
 - **Full Supply-Chain Autonomy:** Zero reliance on upstream breaking license changes or unannounced deprecations.
 - **Dark Gravity Factory Core Integration:** Essential sidecar proxy powering autonomous AI agent pipelines, high-throughput storage routing, zero-downtime failover, and gVisor worker isolation.
-- **Compliance & Security:** Active sovereign maintenance ensuring compliance with EU AI Act (Art. 12 & 14), SOC 2 Type II, ISO/IEC 25059, and strict zero-CVE SLAs.
+- **Auditability & Security Maintenance:** Ongoing vulnerability scanning and security patching designed to facilitate auditing and traceability.
 - **Ecosystem Interoperability:** Direct integration with all 38 repositories in `@lgcorzo` (MinIO Server, MC, KES, Operator, DirectPV, Console, SIMD libraries, etc.).
 
 ---
 
 ### 2. Sovereign MinIO Ecosystem: Maintained Repositories in @lgcorzo
 
-To guarantee long-term sovereign support, full supply-chain independence, and continuous security patching, the complete MinIO ecosystem of 38 repositories is actively maintained under `@lgcorzo`:
+To support long-term maintenance, supply-chain continuity, and continuous security patching, the complete MinIO ecosystem of 38 repositories is actively maintained under `@lgcorzo`:
 
 | Category | Repository | Description | Key Capabilities |
 | :--- | :--- | :--- | :--- |
@@ -44,7 +44,7 @@ To guarantee long-term sovereign support, full supply-chain independence, and co
 | | [lgcorzo/madmin-go](https://github.com/lgcorzo/madmin-go) | MinIO Admin Go Library | Administrative APIs for server configuration, user management, healing |
 | | [lgcorzo/kms-go](https://github.com/lgcorzo/kms-go) | Cryptographic KMS Client Library | Go client primitives for key creation, DEK derivation, envelope encryption |
 | | [lgcorzo/pkg](https://github.com/lgcorzo/pkg) | Common Go Utility Packages | Cryptographic certificates, hashing routines, and shared helper primitives |
-| | [lgcorzo/mtls](https://github.com/lgcorzo/mtls) | Mutual TLS Utilities | Zero-trust inter-node cryptographic identity verification |
+| | [lgcorzo/mtls](https://github.com/lgcorzo/mtls) | Mutual TLS Utilities | Inter-node certificate identity verification |
 | **Hardware & SIMD** | [lgcorzo/sha256-simd](https://github.com/lgcorzo/sha256-simd) | SIMD-Accelerated SHA256 | AVX-512 and ARMv8 Crypto Extensions SHA256 acceleration |
 | | [lgcorzo/md5-simd](https://github.com/lgcorzo/md5-simd) | SIMD-Accelerated MD5 | Parallel AVX-512 and AVX2 MD5 calculation |
 | | [lgcorzo/blake2b-simd](https://github.com/lgcorzo/blake2b-simd) | SIMD-Accelerated BLAKE2b | Pure Go cryptographic hashing leveraging AVX2/AVX512/SSSE3 |
@@ -310,3 +310,10 @@ kubectl --namespace spark-operator logs -f spark-minio-app-driver
 ## License
 
 *sidekick* source code is released under the GNU Affero General Public License v3.0 (AGPLv3).
+
+---
+
+### Fork Maintenance & Agent Transparency
+
+- **Changes vs. Upstream:** Security dependency updates, CI/CD workflow fixes, and CodeQL remediation are tracked in the [commit history](../../commits) and [Pull Requests](../../pulls?q=is%3Apr).
+- **Agent Tagging (`[agent]`):** Commits and pull requests generated automatically by agents in the Dark Gravity pipeline are prefixed with `[agent]` to distinguish automated maintenance from manual work.
