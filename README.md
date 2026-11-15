@@ -5,6 +5,8 @@
 
 ![build](https://github.com/lgcorzo/sidekick/workflows/Go/badge.svg) ![license](https://img.shields.io/badge/license-AGPL%20V3-blue)
 
+Maintained fork of [minio/sidekick](https://github.com/minio/sidekick) (archived upstream). It applies security patches and maintenance fixes on top of upstream. Part of the [Dark Gravity](https://github.com/lgcorzo/rust_CACD_autonomous_factory) factory. License: AGPLv3.
+
 > [!NOTE]
 > **UPSTREAM STATUS & FORK PURPOSE**: While upstream MinIO has archived or restricted legacy repositories in favor of proprietary distributions, this repository is actively maintained and hardened under `@lgcorzo` as a critical high-performance sidecar proxy for the [Dark Gravity Autonomous CA/CD Factory](https://github.com/lgcorzo/rust_CACD_autonomous_factory).
 
